@@ -135,11 +135,6 @@ Example:
 <!-- AUTHORS -->
 
 ## 👥 Authors <a name="authors"></a>
-
-> Mention all of the collaborators of this project.
-
-👤 **Author1**
-
 - GitHub: [@ShiroYaksha90](https://github.com/ShiroYaksha90)
 - Twitter: [@Basim_AlJazaeri](https://twitter.com/Basim_AlJazaeri)
 - LinkedIn: [Basim Aljazaeri](https://www.linkedin.com/in/basimaljazaeri/)
@@ -149,8 +144,6 @@ Example:
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
-
-> Describe 1 - 3 features you will add to the project.
 
 - [ ] **[Add join table for visits]**
 - [ ] **[Database performance edit]**
