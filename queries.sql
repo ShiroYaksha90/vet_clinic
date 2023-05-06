@@ -64,3 +64,40 @@ SELECT AVG(weight_kg) FROM animals;
 SELECT neutered, MAX(escape_attempts) FROM animals GROUP BY neutered;
 SELECT species, MIN(weight_kg), MAX(weight_kg) FROM animals GROUP BY species;
 SELECT species, AVG(escape_attempts) FROM animals WHERE date_of_birth >= 'Jan 1, 1990' AND date_of_birth <= 'Dec 31, 2000' GROUP BY species;
+
+--- Melody Pond's pets
+
+SELECT name 
+FROM animals
+JOIN owners ON animals.owner_id = owners.id
+WHERE owners.full_name = 'Melody Pond';
+
+--- Query for Pokemon species
+SELECT animals.name, animals.species_id, animals.owner_id, species.name as pet_type FROM animals
+JOIN species ON animals.species_id = species.id
+WHERE species.name = 'Pokemon';
+
+--- Query for pets and their owners
+SELECT name AS pet_name, full_name AS owners FROM animals
+RIGHT JOIN owners ON owners.id = animals.owner_id;
+
+--- Query for quantity per species
+SELECT species.name, COUNT(animals.name)
+FROM animals
+JOIN species ON animals.species_id = species.id
+GROUP BY species.name;
+
+---Jennifer's Orwell pets
+SELECT animals.name, owners.full_name FROM animals
+JOIN species ON species.id = animals.species_id AND species.name = 'Digimon'
+JOIN owners ON owners.id = animals.owner_id AND owners.full_name = 'Jennifer Orwell';
+
+---Dean's pets
+SELECT name, full_name as owner_name
+FROM animals
+JOIN owners ON animals.owner_id = owners.id
+WHERE owners.full_name = 'Dean Winchester' AND escape_attempts = 0;
+
+--- Most pets owner
+SELECT owners.full_name, COUNT(animals.id) AS count FROM animals
+JOIN owners ON owners.id = animals.owner_id GROUP BY owners.full_name ORDER BY count DESC LIMIT 1;
