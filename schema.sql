@@ -61,3 +61,10 @@ CREATE TABLE visits (
     vet_id INT REFERENCES vets (id),
     date_of_visit date
 );
+
+select count(*) from animals 
+JOIN visits on animals.id = visits.animal_id
+JOIN vets on visits.vet_id = vets.id 
+JOIN specializations on vets.id = specializations.vet_id
+JOIN species on specialties.species_id = species.id
+where animals.species_id != species.id;

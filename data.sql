@@ -130,7 +130,7 @@ INSERT INTO visits(animal_id, vet_id, date_of_visit) VALUES
   ((select id from animals where name like 'Boarmon'),
     (select id from vets where name like 'Maisy Smith'),
     '2020-08-03'),
-  ((select id from animals where name like 'Boarmon'),
+  ((select id from animals where name like 'Blossom'),
     (select id from vets where name like 'Stephanie Mendez'),
     '2020-05-24'),
   ((select id from animals where name like 'Blossom'),
